@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionAttribute>
+	<displayName>Parallels Desktop License Key and Status</displayName>
+	<displayInCategory>Serial Numbers</displayInCategory>
+	<dataType>string</dataType>
+	<description>This attribute returns the state of the license and the license key.</description>
+	<scriptContentsMac>#!/bin/sh
+
+    result=`prlsrvctl info | awk -F ': ' '/^License/ {print $2}'`
+
+    echo "&lt;result&gt;${result}&lt;/result&gt;"
+
+	</scriptContentsMac>
+</extensionAttribute>
