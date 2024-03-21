@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionAttribute>
+	<displayName>Parallels Desktop Version Number</displayName>
+	<displayInCategory>Virtualization</displayInCategory>
+	<dataType>string</dataType>
+	<description>This attribute returns the version and build number of the installed Parallels Desktop.</description>
+	<scriptContentsMac>#!/bin/sh
+
+    echo "<result>`prlsrvctl info | awk -F ': ' '/^Version/ {print $2}'`</result>"
+
+	</scriptContentsMac>
+</extensionAttribute>
