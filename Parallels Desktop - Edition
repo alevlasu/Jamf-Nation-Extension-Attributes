@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionAttribute>
+	<displayName>Parallels Desktop Edition</displayName>
+	<displayInCategory>Virtualization</displayInCategory>
+	<dataType>string</dataType>
+	<description>This attribute returns the edition of Parallels Desktop. Useful when you want to see who is not using the managed "business" version.</description>
+	<scriptContentsMac>#!/bin/sh
+
+    echo "<result>`prlsrvctl info --license | awk -F '=' '/edition/ {gsub(/"/, "", $2); print $2}'`</result>"
+
+	</scriptContentsMac>
+</extensionAttribute>
